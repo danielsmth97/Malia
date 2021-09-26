@@ -1,0 +1,21 @@
+{
+  "name": "Malia",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node update.sh"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@discordjs/rest": "0.1.0-canary.0",
+    "discord-api-types": "^0.23.1",
+    "discord.js": "^13.1.0",
+    "zlib-sync": "^0.1.7"
+  },
+  "devDependencies": {
+    "node": "^16.6.1"
+  },
+  "description": ""
+}

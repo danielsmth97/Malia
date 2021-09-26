@@ -1,0 +1,1 @@
+~/Malia/node_modules/node/bin/node ~/Malia/node_modules/npm/bin/npx-cli.js $@

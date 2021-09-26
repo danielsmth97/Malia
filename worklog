@@ -1,0 +1,86 @@
+9/16/2021
+Found out that I need to update the version of node.js to import the discord.js library.
+For me to do this properly I need to learn how to execute scripts from the package.json
+file. Here are the links I was using to learn how to update node on startup.
+
+
+//The origional link used
+https://replit.com/@AvyAvocado/Nodejs-16?lite=icon_title_nologo&theme=replitLight#README.md
+
+//This link explains the usage of a .replit file
+https://docs.replit.com/programming-ide/configuring-run-button
+
+//This link explains how to use scripting inside of package.json
+https://krishankantsinghal.medium.com/scripting-inside-package-json-4b06bea74c0e
+
+//Here is a repl.it link explaining how to update node.js
+https://replit.com/talk/ask/How-Can-I-Update-NodeJS-Version/42698
+
+----------------------------------------------------------------------------------------
+9/16/2021
+As of right now I have messed with package.json file 
+
+The origional:
+ "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+
+The modified:
+"scripts": {
+    "start": "node update.sh"
+  },
+
+----------------------------------------------------------------------------------------
+9/16/2021
+I don't have a clue what I am doing with the scripts field at this moment, but I 
+think it will be helpful in aiding me in executing scripts on startup.
+
+The files node update.sh and config.replit are both experimental files that I am 
+using to learn.
+
+updating node.txt is a file that will eventually have a well detailed explaination 
+of how to update node on repl.it
+
+Procfile and package-lock.json are both unchanged.
+
+----------------------------------------------------------------------------------------
+9/18/2021
+
+Got Node.js to update to v16.6.1 on another repl and I will now try to replicate that on this repl.
+
+/* Starting here should be a working solution to my issue */
+
+Start by running this in the shell:
+
+  npm i -D node@16.6.1
+
+(Optional) Try to update npm to v7.20.5
+(Maybe a thing, unsure on this one) Also update npx to v7.20.5
+
+You will need a .replit file with the contents:
+
+  run="bash node index.js"
+
+A file called node with the contents:
+
+  ~/<Your_Repl_Name>/node_modules/node/bin/node $@
+
+A file called npm with the contents:
+
+  ~/<Your_Repl_Name>/node_modules/node/bin/node ~/<Your_Repl_Name>/node_modules/npm/bin/npm-cli.js $@
+
+A file called npx with the contents:
+
+ ~/<Your_Repl_Name>/node_modules/node/bin/node ~/<Your_Repl_Name>/node_modules/npm/bin/npx-cli.js $@
+
+----------------------------------------------------------------------------------------
+9/18/2021
+
+I got node.js to update to 16.6.1 and the bot can now go online. After that another error was thrown where I had to reinitialize the bot with Intents. I have since fixed that issue. 
+
+The next time I work on this, I will need to fix the error:
+
+TypeError: messageReaction.message.guild.member is not a function
+  at Client.<anonymous> (/home/runner/Malia/index.js:28:39);
+
+I don't know why, but Kyro's code seems to be depreciated and I have to now understand why.
